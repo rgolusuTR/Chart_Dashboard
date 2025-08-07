@@ -1,0 +1,273 @@
+.full-chart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.full-chart-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 95vw;
+  max-height: 95vh;
+  width: 1200px;
+  height: 800px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.close-btn:hover {
+  background: #ff3742;
+  transform: scale(1.1);
+}
+
+.download-btn {
+  position: absolute;
+  top: 15px;
+  right: 70px;
+  background: #2ed573;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.download-btn:hover {
+  background: #26d467;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 213, 115, 0.3);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+.view-table-btn {
+  position: absolute;
+  top: 15px;
+  right: 200px;
+  background: #3742fa;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.view-table-btn:hover {
+  background: #2f3542;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(55, 66, 250, 0.3);
+}
+
+.view-table-btn:active {
+  transform: translateY(0);
+}
+
+.full-chart-container {
+  width: 100%;
+  height: calc(100% - 20px);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-section {
+  flex: 1;
+  min-height: 400px;
+}
+
+.table-section {
+  flex-shrink: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: white;
+  border: 1px solid #e0e0e0;
+}
+
+.data-table th,
+.data-table td {
+  padding: 8px 12px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.data-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.data-table th:first-child {
+  background-color: white;
+  border: none;
+}
+
+.category-label {
+  text-align: left !important;
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.data-cell {
+  font-weight: 500;
+  color: #333;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .full-chart-modal {
+    width: 95vw;
+    height: 90vh;
+    padding: 15px;
+  }
+
+  .close-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .download-btn {
+    right: 55px;
+    padding: 6px 12px;
+    font-size: 12px;
+    top: 10px;
+  }
+
+  .view-table-btn {
+    right: 160px;
+    padding: 6px 12px;
+    font-size: 12px;
+    top: 10px;
+  }
+
+  .full-chart-container {
+    height: calc(100% - 15px);
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .full-chart-modal {
+    width: 98vw;
+    height: 95vh;
+    padding: 10px;
+  }
+
+  .close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    top: 5px;
+    right: 5px;
+  }
+
+  .download-btn {
+    right: 45px;
+    padding: 4px 8px;
+    font-size: 11px;
+    top: 5px;
+  }
+
+  .view-table-btn {
+    right: 90px;
+    padding: 4px 8px;
+    font-size: 11px;
+    top: 5px;
+  }
+}
